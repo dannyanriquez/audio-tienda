@@ -6,7 +6,7 @@ import {Card, Button} from 'react-bootstrap'
 export const Cards = () => {
     return (
         <section>
-            <div className="container text-center my-5">
+            <div className="container my-5">
                 <div className="row">
                 <h1 className="col-md-12">
                     SOMOS UNA TIENDA 100% ONLINE. 
