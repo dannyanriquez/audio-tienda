@@ -6,7 +6,7 @@ import {Card, Button} from 'react-bootstrap'
 export const Cards = () => {
     return (
         <section>
-            <div className="container my-5">
+            <div className="container my-5 text-center">
                 <div className="row">
                 <h1 className="col-md-12">
                     SOMOS UNA TIENDA 100% ONLINE. 
@@ -20,7 +20,7 @@ export const Cards = () => {
                 </h6>
                 </div>
             </div>
-            <div className="container my-5">
+            <div className="container my-5 text-center">
                 <div className="row">
                     <div className="col-md-4">
                         <Card style={{ width: '18rem' }}>
