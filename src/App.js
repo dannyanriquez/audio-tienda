@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Cards } from './components/Cards';
-import { Carrousel } from './components/Carrousel';
-import { NavBar } from "./components/NavBar";
+import { Cards } from './components/Cards/Cards';
+import { Carrousel } from './components/Carousel/Carrousel';
+import { NavBar } from "./components/NavBar/NavBar";
 
 
 function App() {
@@ -10,7 +10,6 @@ function App() {
     <NavBar/>
     <Carrousel/>
     <Cards/>
-    
     </div>
   );
 }
