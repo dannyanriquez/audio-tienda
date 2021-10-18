@@ -1,8 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Cards } from './components/Cards/Cards';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { Carrousel } from './components/Carousel/Carrousel';
 import { NavBar } from "./components/NavBar/NavBar";
 import { Router } from 'react-router-dom';
+ItemListContainer
+
 
 
 function App() {
@@ -10,8 +12,9 @@ function App() {
     <div>
     <NavBar/>
     <Carrousel/>
-    <Cards/>
+    <ItemListContainer/>
     
+  
     
     </div>
   );

@@ -3,7 +3,7 @@ import {Card, Button} from 'react-bootstrap'
 
 
 
-export const Cards = () => {
+export const ItemListContainer = () => {
     return (
         <section>
             <div className="container my-5 text-center">
