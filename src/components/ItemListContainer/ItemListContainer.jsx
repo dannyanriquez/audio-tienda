@@ -3,15 +3,13 @@ import {Card, Button} from 'react-bootstrap'
 
 
 
-export const ItemListContainer = () => {
+export const ItemListContainer = (props) => {
     return (
         <section>
             <div className="container my-5 text-center">
                 <div className="row">
                 <h1 className="col-md-12">
-                    SOMOS UNA TIENDA 100% ONLINE. 
-                    TE OFRECEMOS VARIEDAD Y CALIDAD ACORDE PARA LOS 
-                    USUARIOS MÁS EXIGENTES
+                {props.title}
                 </h1>
                 <h6 className="col-md-12 my-5">
                     Representantes en Argentina de productos de Harman, Bose & Peavey, 
