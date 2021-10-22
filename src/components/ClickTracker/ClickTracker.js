@@ -9,17 +9,15 @@ export const ClickTracker = () => {
 
     const aumentarContador = () => {
         setContador( contador + 1 )
-    } 
+    };
 
     const restarContador = () => {
         setContador( contador - 1 )
-    }
+    };
 
     const resetContador = () => {
         setContador(0)
-    }
-
-   
+    };
     
     
     return (
