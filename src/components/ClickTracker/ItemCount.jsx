@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap';
 
-
-
-
 export function ItemCount() {
     const [contador, setContador] = useState(0);
 
@@ -32,13 +29,13 @@ export function ItemCount() {
             <div className="row">
                 <div className="col-md-12 my-3">CONTADOR</div>
                 <div className="col-md-12">
-                    <Button variant="primary" size="md" className="mx-1" active onClick={aumentarContador}>
+                    <Button variant="dark" size="md" className="mx-1" active onClick={aumentarContador}>
                         Sumar
                     </Button>
-                    <Button variant="primary" size="md" className="mx-1" active onClick={restarContador}>
+                    <Button variant="dark" size="md" className="mx-1" active onClick={restarContador}>
                         Restar
                     </Button>
-                    <Button variant="primary" size="md" className="mx-1" active onClick={resetContador}>
+                    <Button variant="dark" size="md" className="mx-1" active onClick={resetContador}>
                         Reset
                     </Button>
                 </div>

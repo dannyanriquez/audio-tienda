@@ -18,7 +18,7 @@ export const ItemListContainer = (props) => {
                 </h6>
                 </div>
             </div>
-            <div className="container my-5 text-center">
+            <div className="container text-center my-5">
                 <div className="row">
                     <div className="col-md-4">
                         <Card style={{ width: '18rem' }}>
