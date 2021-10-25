@@ -1,28 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 
-export function ItemCount() {
+export function ItemCount(props) {
     const [contador, setContador] = useState(0);
 
     const aumentarContador = () => {
-        setContador(contador + 1);
+        // eslint-disable-next-line eqeqeq
+        if (contador == props.stock )
+            alert `Supera stock`;
+            else setContador(contador + 1)
+        
+        ;
     };
     const restarContador = () => {
-        setContador(contador - 1);
+
+        // eslint-disable-next-line eqeqeq
+        if (contador == 0 )
+        alert `Numero negativo`;
+        else setContador(contador - 1);
+
     };
-    
 
-    
-    useEffect (function () {
-
-            if (contador >= 0)
-                ;
-            else
-                // eslint-disable-next-line no-unused-expressions
-                (setContador(0), alert`NO SE CONTABILIZAN NUMEROS NEGATIVOS`);
-            
-           
-        },[contador]);
 
     return (
         <div className="container text-center">
