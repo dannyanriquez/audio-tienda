@@ -10,9 +10,8 @@ export function ItemCount() {
     const restarContador = () => {
         setContador(contador - 1);
     };
-    const resetContador = () => {
-        setContador(0);
-    };
+    
+
     
     useEffect (function () {
 
@@ -20,7 +19,8 @@ export function ItemCount() {
                 ;
             else
                 // eslint-disable-next-line no-unused-expressions
-                (setContador(0), alert`NO SE CONTABILIZAN NUMEROS NEGATIVOS`)
+                (setContador(0), alert`NO SE CONTABILIZAN NUMEROS NEGATIVOS`);
+            
            
         },[contador]);
 
@@ -34,9 +34,6 @@ export function ItemCount() {
                     </Button>
                     <Button variant="dark" size="md" className="mx-1" active onClick={restarContador}>
                         Restar
-                    </Button>
-                    <Button variant="dark" size="md" className="mx-1" active onClick={resetContador}>
-                        Reset
                     </Button>
                 </div>
                 <p className=" my-3"> resultado: {contador}</p>
