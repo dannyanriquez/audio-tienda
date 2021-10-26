@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
+import { productos } from '../data/productos';
+
 
 
 export function ItemCount({stock, initial, onAdd}) {
@@ -21,7 +23,6 @@ export function ItemCount({stock, initial, onAdd}) {
     return (
         <div className="container text-center">
             <div className="row">
-                <div className="col-md-12 my-3">CONTADOR</div>
                 <div className="col-md-12">
                     <Button variant="dark" size="md" className="mx-1" active onClick={sumarContador}>
                         +

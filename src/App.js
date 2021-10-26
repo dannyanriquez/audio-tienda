@@ -18,6 +18,8 @@ function App() {
     <ItemListContainer title="SOMOS UNA TIENDA 100% ONLINE. TE OFRECEMOS VARIEDAD Y CALIDAD ACORDE PARA LOS USUARIOS MÁS EXIGENTES"/>
     
     <BannerWeb/>
+
+    
     
     </div>
   );

@@ -1,6 +1,8 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
 import { ItemCount } from '../ClickTracker/ItemCount'
+import { productos } from '../data/productos'
+
 
 
 export const ItemListContainer = (props) => {
@@ -28,7 +30,7 @@ export const ItemListContainer = (props) => {
             </div>
             <div className="container text-center my-5">
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src="./images/EonOneCompact/JBL_EonOneCompact_withTablet_original.png" />
                             <Card.Body>
@@ -37,11 +39,11 @@ export const ItemListContainer = (props) => {
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
-                                <ItemCount stock={10} initial={0} onAdd={handleClick}/>
+                                <ItemCount stock={4} initial={0} onAdd={handleClick}/>
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src="./images/LSR305/mkii305-angle_z_original.jpeg" />
                             <Card.Body>
@@ -50,11 +52,11 @@ export const ItemListContainer = (props) => {
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
-                                <ItemCount stock={10} initial={0} onAdd={handleClick}/>
+                                <ItemCount stock={2} initial={0} onAdd={handleClick}/>
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src="./images/PRX818XLFW/prx818xlfw_front_grille_z_original.png" />
                             <Card.Body>
@@ -63,7 +65,20 @@ export const ItemListContainer = (props) => {
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
-                                <ItemCount stock={10} initial={0} onAdd={handleClick}/>
+                                <ItemCount stock={5} initial={0} onAdd={handleClick}/>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div className="col-md-3">
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="./images/EonOneCompact/JBL_EonOneCompact_withTablet_original.png" />
+                            <Card.Body>
+                                <Card.Title>EON ONE compact</Card.Title>
+                                <Card.Text>
+                                    Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.
+                                </Card.Text>
+                                <ItemCount stock={4} initial={0} onAdd={handleClick}/>
                             </Card.Body>
                         </Card>
                     </div>

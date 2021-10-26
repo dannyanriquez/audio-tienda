@@ -1,11 +1,13 @@
 
-export const stock = [
+export const productos = [
         {   
         id: 1,
         nombre: "LSR305 MKII",
         precio: 40000,
         desc: "Powered 5 Two-Way Studio Monitor",
-        img: "./images/LSR305/mkii305-angle_z_original.jpeg"
+        img: './images/LSR305/mkii305-angle_z_original.jpeg',
+        
+
 
         }, 
         {
