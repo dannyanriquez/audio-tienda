@@ -1,7 +1,10 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
 import { ItemCount } from '../ClickTracker/ItemCount'
-import { productos } from '../data/productos'
+import EonOne from "../../assets/images/EonOne/JBL-EONone-angle-04b_original.jpeg"
+import Lsr305 from "../../assets/images/LSR305/mkii305-angle_z_original.jpeg"
+import Prx818 from "../../assets/images/PRX818XLFW/prx818xlfw_front_grille_z_original.png"
+import EonOneCompact from "../../assets/images/EonOneCompact/EonOneCompact_3-4_MonitorSide_original.png"
 
 
 
@@ -32,9 +35,9 @@ export const ItemListContainer = (props) => {
                 <div className="row">
                     <div className="col-md-3">
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="./images/EonOneCompact/JBL_EonOneCompact_withTablet_original.png" />
+                            <Card.Img variant="top" src={EonOne} />
                             <Card.Body>
-                                <Card.Title>EON ONE compact</Card.Title>
+                                <Card.Title>EON ONE</Card.Title>
                                 <Card.Text>
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
@@ -45,7 +48,7 @@ export const ItemListContainer = (props) => {
                     </div>
                     <div className="col-md-3">
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="./images/LSR305/mkii305-angle_z_original.jpeg" />
+                            <Card.Img variant="top" src={Lsr305} />
                             <Card.Body>
                                 <Card.Title>LSR 305 MKII</Card.Title>
                                 <Card.Text>
@@ -58,7 +61,7 @@ export const ItemListContainer = (props) => {
                     </div>
                     <div className="col-md-3">
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="./images/PRX818XLFW/prx818xlfw_front_grille_z_original.png" />
+                            <Card.Img variant="top" src={Prx818} />
                             <Card.Body>
                                 <Card.Title>SUB PRX818XLFW</Card.Title>
                                 <Card.Text>
@@ -71,7 +74,7 @@ export const ItemListContainer = (props) => {
                     </div>
                     <div className="col-md-3">
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="./images/EonOneCompact/JBL_EonOneCompact_withTablet_original.png" />
+                            <Card.Img variant="top" src={EonOneCompact} />
                             <Card.Body>
                                 <Card.Title>EON ONE compact</Card.Title>
                                 <Card.Text>

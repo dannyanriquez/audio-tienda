@@ -1,5 +1,8 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import BannerA from "../../assets/images/WebBannerA.jpeg"
+import BannerB from "../../assets/images/WebBannerB.jpeg"
+import BannerC from "../../assets/images/WebBannerC.jpeg"
 
 export const Carrousel = () => {
     return (
@@ -8,21 +11,21 @@ export const Carrousel = () => {
   <Carousel.Item interval={4000}>
     <img
       className="d-block w-100"
-      src="./images/WebBannerA.jpeg"
+      src= {BannerA}
       alt="First slide"
     />
   </Carousel.Item>
   <Carousel.Item interval={4000}>
     <img
       className="d-block w-100"
-      src="./images/WebBannerB.jpeg"
+      src={BannerB}
       alt="Second slide"
     />
   </Carousel.Item>
   <Carousel.Item interval={4000}>
     <img
       className="d-block w-100"
-      src="./images/WebBannerC.jpeg"
+      src={BannerC}
       alt="Third slide"
     />
   </Carousel.Item>
