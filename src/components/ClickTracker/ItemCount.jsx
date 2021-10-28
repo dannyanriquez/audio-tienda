@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 
 
 
+
 export function ItemCount({stock, initial, onAdd}) {
     const [contador, setContador] = useState(initial);
 
@@ -41,7 +42,6 @@ export function ItemCount({stock, initial, onAdd}) {
         </div>
     )
 }
-    
     
     
     

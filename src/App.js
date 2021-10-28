@@ -3,7 +3,7 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { Carrousel } from './components/Carousel/Carrousel';
 import { NavBar } from "./components/NavBar/NavBar";
 import { BannerWeb } from './components/Parallax/BannerWeb';
-import { Item } from './components/ItemListContainer/Item';
+import { ItemList } from './components/ItemListContainer/ItemList';
 
 
 
@@ -22,7 +22,7 @@ function App() {
     <BannerWeb/>
 
 
-    <Item/>
+    <ItemList/>
     
 
     

@@ -6,8 +6,6 @@ export const productos = [
         precio: 40000,
         desc: "Powered 5 Two-Way Studio Monitor",
         img: './images/LSR305/mkii305-angle_z_original.jpeg',
-        
-
 
         }, 
         {
@@ -50,6 +48,22 @@ export const productos = [
         desc: "18” Self-Powered Extended Low-Frequency Subwoofer with Wi-Fi",
         img: "./images/PRX818XLFW/prx818xlfw_front_grille_z_original.png"
                 
+        },
+        {   
+        id: 7,
+        nombre: "PRX818XLF",
+        precio: 40000,
+        desc: "18” Self-Powered Extended Low-Frequency Subwoofer with Wi-Fi",
+        img: "./images/PRX818XLFW/prx818xlfw_front_grille_z_original.png"
+                    
+        },
+        {   
+        id: 8,
+        nombre: "PRX818XLF",
+        precio: 40000,
+        desc: "18” Self-Powered Extended Low-Frequency Subwoofer with Wi-Fi",
+        img: "./images/PRX818XLFW/prx818xlfw_front_grille_z_original.png"
+                    
         },
          
 
