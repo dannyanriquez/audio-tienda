@@ -1,6 +1,8 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
 import { ItemCount } from '../ClickTracker/ItemCount'
+import { ItemList } from './ItemList'
+
 import EonOne from "../../assets/images/EonOne/JBL-EONone-angle-04b_original.jpeg"
 import Lsr305 from "../../assets/images/LSR305/mkii305-angle_z_original.jpeg"
 import Prx818 from "../../assets/images/PRX818XLFW/prx818xlfw_front_grille_z_original.png"
@@ -19,6 +21,10 @@ export const ItemListContainer = (props) => {
     return (
         <>
         <section>
+
+        <ItemList/>
+
+
             <div className="container my-5 text-center">
                 <div className="row">
                     <h1 className="col-md-12">
