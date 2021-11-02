@@ -1,5 +1,5 @@
 import React from 'react'
-import BannerParallax from "../../assets/images/dbx_PA2_PromoBanner2_May-June.jpg"
+import BannerParallax from '../../assets/images/dbx_PA2_PromoBanner2_May-June.jpg'
 
 
 export const BannerWeb = () => {

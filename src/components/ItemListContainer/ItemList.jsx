@@ -4,8 +4,11 @@ import { getProductos } from '../../services/getProducts'
 
 
 
-export const ItemList = () => {
 
+export const ItemList = () => {
+    
+
+    
    
     const [loading, setLoading] = useState(true)  //se muestra un loading inicial en true
     const [products, setProducts] = useState([]) //creo un nuevo estado para guardar el resolve dentro de un array vacio
@@ -30,15 +33,16 @@ export const ItemList = () => {
         <>
 
         <section className="container text-center my-5">
-        <div className="row">  
-        {
-            
-            loading ? <h1>Loading</h1> :  //ternario: si loading es verdadero muestra el h1, cuando termina de cargar pasa el mapeo
-            
-            products.map((prod) => <Item producto={prod}/>)           
-                
-        }
-        </div>
+                <div className="row">  
+                {
+                    
+                    loading ? <h1>Loading</h1> :  //ternario: si loading es verdadero muestra el h1, cuando termina de cargar pasa el mapeo
+                    
+                    products.map((prod) => <Item producto={prod}/>)           
+                        
+                }
+                </div>
+        
         </section>
         </>
         

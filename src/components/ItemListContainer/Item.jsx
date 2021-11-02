@@ -1,5 +1,4 @@
 import React from 'react'
-import EonOne from "../../assets/images/EonOne/JBL-EONone-angle-04b_original.jpeg"
 import { Card, Button } from 'react-bootstrap'
 
 
@@ -12,7 +11,7 @@ export const Item = ({producto}) => {
             {
                 <div key={producto.id} className="col-md-3 my-5">
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={EonOne} />
+                    <Card.Img variant="top" src={producto.img} />
                         <Card.Body>
                             <Card.Title>{producto.nombre}</Card.Title>
                                 <Card.Text>

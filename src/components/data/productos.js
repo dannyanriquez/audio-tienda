@@ -1,4 +1,16 @@
 
+export const UnProducto = {   
+    id: 1,
+    nombre: "LSR305 MKII",
+    precio: 40000,
+    descBreve: "Powered 5 Two-Way Studio Monitor",
+    imgA: './images/LSR305/mkii305-angle_z_original.jpeg',
+    imgB: './images/LSR305/mkii305-rear_z_original.jpeg',
+    imgC: './images/LSR305/mkii305-pair_z_original.jpeg',
+    descLong: "Bryan Bradley, GM, HARMAN Professional Loudspeaker Group: The simultaneous launch of 3 Series Studio Monitors and our new PRX700 portable powered loudspeakers is an expression of our commitment and passion for the audio industry and our ongoing investment in innovation. It gives us great pleasure to present our customers with these new JBL lines developed to take their projects to the highest possible level"
+
+    }
+
 export const productos = [
         {   
         id: 1,
@@ -51,10 +63,10 @@ export const productos = [
         },
         {   
         id: 7,
-        nombre: "PRX818XLF",
+        nombre: "ACTIVE IRX112 BT",
         precio: 40000,
-        desc: "18” Self-Powered Extended Low-Frequency Subwoofer with Wi-Fi",
-        img: "./images/PRX818XLFW/prx818xlfw_front_grille_z_original.png"
+        desc: "18” Self-Powered Extended Low-Frequency Subwoofer with Wi-Fi and Bluetooth loudspeaker",
+        img: "./images/IRX112BT/VE112_Front_original.png"
                     
         },
         {   

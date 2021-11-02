@@ -5,17 +5,18 @@ import { Button } from 'react-bootstrap';
 
 
 
-export function ItemCount({stock, initial, onAdd}) {
-    const [contador, setContador] = useState(initial);
+export function ItemCount({stock, initial, onAdd}) {   //las props vienen de item Detail
 
-    const sumarContador = () => {
+    const [contador, setContador] = useState(initial);  //seteo un nuevo estado de contador, el valor initial viene del itemDetail en 0
 
-        contador < stock ? setContador(contador+1) : alert(`Supera el stock disponible`);
+    const sumarContador = () => {  //funcion agregar cantidad al producto
+
+        contador < stock ? setContador(contador+1) : alert(`Supera el stock disponible`); //si contador es menor al stock declarado por prop, entonces setea el estado. Caso contrario alert
 
     }
-    const restarContador = () => {
+    const restarContador = () => {  //funcion restar cantidad
 
-        contador > 1 ? setContador(contador-1) : alert (`No puedes seleccionar menos de 1 unidad`);
+        contador > 1 ? setContador(contador-1) : alert (`No puedes seleccionar menos de 1 unidad`); //si el estado contador es mayor a 1 se resta, caso contrario alert
         
 
     };
