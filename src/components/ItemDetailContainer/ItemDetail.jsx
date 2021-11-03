@@ -24,7 +24,7 @@ export const ItemDetail = ({DetailProducto}) => {
                                         <Carousel.Item interval={4000}>
                                             <img
                                             className="d-block w-100"
-                                            src= {DetailProducto.imgA}
+                                            src= {DetailProducto.imga}
                                             alt="First slide"
                                             />
                                             <Carousel.Caption>
@@ -33,14 +33,14 @@ export const ItemDetail = ({DetailProducto}) => {
                                         <Carousel.Item interval={4000}>
                                             <img
                                             className="d-block w-100"
-                                            src={DetailProducto.imgB}
+                                            src={DetailProducto.imgb}
                                             alt="Second slide"
                                             />
                                         </Carousel.Item>
                                         <Carousel.Item interval={4000}>
                                             <img
                                             className="d-block w-100"
-                                            src={DetailProducto.imgC}
+                                            src={DetailProducto.imgc}
                                             alt="Third slide"
                                             />
                                         </Carousel.Item>

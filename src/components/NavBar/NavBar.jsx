@@ -1,7 +1,9 @@
 import React from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap'
-import { CartWidget } from './CartWidget'
-import "./Navbar.scss"
+import { Link } from 'react-router-dom';
+
+import { BsCart4 } from "react-icons/bs";
+
 
 
 
@@ -11,17 +13,19 @@ export const NavBar = () => {
         <div>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                  <Navbar.Brand href="#home">AudioTienda</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Productos</Nav.Link>
-                        <Nav.Link href="#pricing">Contacto</Nav.Link>
+                    <Navbar.Brand as={Link} to="/">AudioTienda</Navbar.Brand>
+                    <Nav className="me-center">
+                            <Nav.Link as={Link} to="/">Home</Nav.Link>   
+                            <Nav.Link as={Link} to="/Audio">Audio</Nav.Link>
+                            <Nav.Link as={Link} to="/homeStudio">Home Studio</Nav.Link>
+                            <Nav.Link as={Link} to="/Cart"><BsCart4/></Nav.Link> 
                     </Nav>
-
-                    <CartWidget/>
-
                 </Container>
             </Navbar>
         </div>
     )
 }
+
+
+//react-bootstrap proporciona un accesorio "AS" de renderizado en la mayoría de sus 
+//componentes para especificar qué componente o elemento desea renderizar si no quiere el predeterminado

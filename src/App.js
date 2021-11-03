@@ -1,6 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Cart } from './components/Cart/Cart';
+
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { NavBar } from './components/NavBar/NavBar';
+
 
 
 
@@ -9,16 +14,16 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 function App() {
   
   return (
-    <div>
-    
-    
-    <ItemListContainer title="SOMOS UNA TIENDA 100% ONLINE. TE OFRECEMOS VARIEDAD Y CALIDAD ACORDE PARA LOS USUARIOS MÁS EXIGENTES"/>
-    
-    
-    
-    
-    <ItemDetailContainer/>
-    
+    <div>  
+    <BrowserRouter> 
+    <NavBar/>
+        <Switch>
+        <Route exact path="/" component={ItemListContainer}/>  
+            <Route exact path="/categoria/:id" component={ItemListContainer}/>  
+            <Route exact path="/details/:id" component={ItemDetailContainer}/> 
+            <Route exact path="/Cart" component={Cart}/> 
+        </Switch>
+    </BrowserRouter> 
     
     </div>
   );
