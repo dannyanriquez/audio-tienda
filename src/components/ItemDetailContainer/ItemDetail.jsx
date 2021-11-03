@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap'
 import { ItemCount } from '../ClickTracker/ItemCount'
 
 
-export const ItemDetail = ({DetailProducto}) => {
+export const ItemDetail = ({propproducto}) => {
 
     const handleClick = (total) => {   //funcion para agregar cantidades al carrito
         alert(`la cantidad agregada es ${total}`)
@@ -18,13 +18,13 @@ export const ItemDetail = ({DetailProducto}) => {
             <>
             <div>
                             <Card className="text-center">
-                                <Card.Header>{DetailProducto.nombre} - {DetailProducto.descBreve}</Card.Header>
+                                <Card.Header>{propproducto.nombre} - {propproducto.descBreve}</Card.Header>
                                 <Card.Body>
                                     <Carousel>
                                         <Carousel.Item interval={4000}>
                                             <img
                                             className="d-block w-100"
-                                            src= {DetailProducto.imga}
+                                            src= {propproducto.imga}
                                             alt="First slide"
                                             />
                                             <Carousel.Caption>
@@ -33,22 +33,22 @@ export const ItemDetail = ({DetailProducto}) => {
                                         <Carousel.Item interval={4000}>
                                             <img
                                             className="d-block w-100"
-                                            src={DetailProducto.imgb}
+                                            src={propproducto.imgb}
                                             alt="Second slide"
                                             />
                                         </Carousel.Item>
                                         <Carousel.Item interval={4000}>
                                             <img
                                             className="d-block w-100"
-                                            src={DetailProducto.imgc}
+                                            src={propproducto.imgc}
                                             alt="Third slide"
                                             />
                                         </Carousel.Item>
                                         </Carousel>
                                     <Card.Text className="my-3">
-                                    {DetailProducto.descLong}
+                                    {propproducto.descLong}
                                     </Card.Text>
-                                    <Card.Title>Precio ${DetailProducto.precio}</Card.Title>
+                                    <Card.Title>Precio ${propproducto.precio}</Card.Title>
                                 </Card.Body>
                                 <ItemCount stock={4} initial={0} onAdd={handleClick}/>
                                 <Card.Footer className="text-muted">2 days ago</Card.Footer>

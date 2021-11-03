@@ -8,9 +8,6 @@ import { NavBar } from './components/NavBar/NavBar';
 
 
 
-
-
-
 function App() {
   
   return (
@@ -19,8 +16,8 @@ function App() {
     <NavBar/>
         <Switch>
         <Route exact path="/" component={ItemListContainer}/>  
-            <Route exact path="/categoria/:id" component={ItemListContainer}/>  
-            <Route exact path="/details/:id" component={ItemDetailContainer}/> 
+            <Route exact path="/categoria/:idCategoria" component={ItemListContainer}/>  
+            <Route exact path="/details/:idItem" component={ItemDetailContainer}/> 
             <Route exact path="/Cart" component={Cart}/> 
         </Switch>
     </BrowserRouter> 

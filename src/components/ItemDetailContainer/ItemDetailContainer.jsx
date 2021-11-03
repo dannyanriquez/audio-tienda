@@ -4,31 +4,26 @@ import { getProductos } from '../../services/getProducts'
 import { useParams } from 'react-router-dom'
 
 
-
-
 export const ItemDetailContainer = () => {
 
-    const {id} = useParams()
+    const {idItem} = useParams()
 
-    const [detailProduct, setDetailProduct] = useState({}) //estado inicial objeto vacio
+    const [detalleProducto, setDetalleProducto] = useState({}) //estado inicial objeto vacio
     const [loadingTwo, setLoadingTwo] = useState(true)  //se muestra un loading inicial en true
 
     useEffect(() => {
         getProductos
-        .then(res => setDetailProduct(res.find(prod => prod.id === parseInt(id)))) //capturo el resultado positivo y lo seteo en el estado setProducts con un filtro por categoria. Devuelve array pasado anumero
+        .then(res => setDetalleProducto(res.find(prod => prod.id === parseInt(idItem)))) //capturo el resultado positivo y lo seteo en el estado setProducts con un filtro por categoria. Devuelve array pasado anumero
         .catch(err => console.log(err)) //capturamos todos los errores posibles que vienen desde la promesa, en este caso de productos
         .finally() //cuando termina el ciclo setea el loading a falso y muestra el map   
-
 
         
         setTimeout(() => {
             setLoadingTwo(false)
         }, 2000);
 
-    }, [id])
+    }, [idItem])
     
-
-    console.log(typeof id)
 
     return (
         <>
@@ -38,7 +33,7 @@ export const ItemDetailContainer = () => {
             
             loadingTwo ? <h1>Loading</h1> :  //ternario: si loading es verdadero muestra el h1, cuando termina de cargar pasa el mapeo
             
-            <ItemDetail DetailProducto={detailProduct}/>         
+            <ItemDetail propproducto={detalleProducto}/>         
                 
             }
             </div>

@@ -16,8 +16,8 @@ export const NavBar = () => {
                     <Navbar.Brand as={Link} to="/">AudioTienda</Navbar.Brand>
                     <Nav className="me-center">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>   
-                            <Nav.Link as={Link} to="/Audio">Audio</Nav.Link>
-                            <Nav.Link as={Link} to="/homeStudio">Home Studio</Nav.Link>
+                            <Nav.Link as={Link} to="/categoria/audio">Audio</Nav.Link>
+                            <Nav.Link as={Link} to="/categoria/homestudio">Home Studio</Nav.Link>
                             <Nav.Link as={Link} to="/Cart"><BsCart4/></Nav.Link> 
                     </Nav>
                 </Container>
