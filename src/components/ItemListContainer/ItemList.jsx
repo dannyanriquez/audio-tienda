@@ -33,7 +33,7 @@ export const ItemList = () => {
 
             setTimeout(() => {
                 setLoading(false)
-            }, 2000);
+            }, 3000);
         
     },[idCategoria])
 

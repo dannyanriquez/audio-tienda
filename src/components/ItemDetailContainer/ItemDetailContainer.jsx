@@ -21,7 +21,7 @@ export const ItemDetailContainer = () => {
         
         setTimeout(() => {
             setLoadingTwo(false)
-        }, 2000);
+        }, 3000);
 
     }, [idItem])
     
