@@ -10,8 +10,10 @@ export const Item = ({producto}) => {
     return (                                
         <>
             {
+
                 <div className="col-md-3 my-3">
                 <Card style={{ width: '18rem' }}>
+                
                     <Card.Img variant="top" src={producto.imga} />
                         <Card.Body>
                             <Card.Title>{producto.nombre}</Card.Title>

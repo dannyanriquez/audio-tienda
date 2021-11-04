@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ItemDetail } from './ItemDetail'
 import { getProductos } from '../../services/getProducts'
+import Spinner from 'react-bootstrap/Spinner'
 import { useParams } from 'react-router-dom'
 
 
@@ -31,7 +32,13 @@ export const ItemDetailContainer = () => {
             <div className="row">  
             {
             
-            loadingTwo ? <h1>Loading</h1> :  //ternario: si loading es verdadero muestra el h1, cuando termina de cargar pasa el mapeo
+            loadingTwo ? <div  className="col-md-12">
+                                 <Spinner animation="grow" /> 
+                         </div>   
+            
+            
+            
+            :  //ternario: si loading es verdadero muestra el h1, cuando termina de cargar pasa el mapeo
             
             <ItemDetail propproducto={detalleProducto}/>         
                 

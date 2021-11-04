@@ -6,6 +6,8 @@ import { ItemCount } from '../ClickTracker/ItemCount'
 
 export const ItemDetail = ({propproducto}) => {
 
+    
+    
     const handleClick = (total) => {   //funcion para agregar cantidades al carrito
         alert(`la cantidad agregada es ${total}`)
       }
@@ -50,7 +52,7 @@ export const ItemDetail = ({propproducto}) => {
                                     </Card.Text>
                                     <Card.Title>Precio ${propproducto.precio}</Card.Title>
                                 </Card.Body>
-                                <ItemCount stock={4} initial={0} onAdd={handleClick}/>
+                                <ItemCount stock={propproducto.stock} initial={0} onAdd={handleClick}/>
                                 <Card.Footer className="text-muted">2 days ago</Card.Footer>
                             </Card>
                         </div>

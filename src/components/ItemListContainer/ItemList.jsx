@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { Item } from './Item'
 import { getProductos } from '../../services/getProducts'
+import Spinner from 'react-bootstrap/Spinner'
 import { useParams } from 'react-router-dom'
 
 export const ItemList = () => {
@@ -43,12 +44,14 @@ export const ItemList = () => {
 
         <section className="container text-center my-5">
                 <div className="row">  
-                <h2 className="col-md-12">
-                        PRODUCTOS DESTACADOS
-                    </h2>
+                
                 {
                     
-                    loading ? <h1>Loading</h1> :  //ternario: si loading es verdadero muestra el h1, cuando termina de cargar pasa el mapeo
+                    loading ? <div  className="col-md-12">
+                                    <Spinner animation="grow" /> 
+                             </div>       
+                                
+                        :  //ternario: si loading es verdadero muestra el h1, cuando termina de cargar pasa el mapeo
                     
                     products.map((prod) => <Item key={prod.id} producto={prod}/>)           
                         
