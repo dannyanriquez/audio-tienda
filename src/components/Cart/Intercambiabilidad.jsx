@@ -23,7 +23,7 @@ export const ContinueCart = () => {
         )
     }
 
-export const Intercambiabilidad = () => {
+export const Intercambiabilidad = () => { 
         
 const [input, setInput] = useState(true)
 
@@ -47,3 +47,5 @@ const handleInter = () => {
         </div>
     )
 }
+
+// revisar 

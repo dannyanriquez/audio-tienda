@@ -15,7 +15,7 @@ const handleClick = (contador) => {
 }
 
 
-console.log(carrito)
+console.log(carrito) //estado del carrito
           
     return (
         
