@@ -39,9 +39,8 @@ export function ItemCount({stock, onAdd}) {   //las props vienen de item Detail,
                     </Button>
                     
                     <Intercambiabilidad onClick={() => { return onAdd(contador);}}/> 
-            
-                                      
-                    
+                      
+                
                 </div>
                 <p className=" my-3"> Cantidad: {contador}</p>
             </div>
