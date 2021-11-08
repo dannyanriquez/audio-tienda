@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
+import { Intercambiabilidad } from '../Cart/Intercambiabilidad';
 
 
 
 
 
-export function ItemCount({stock, initial, onAdd}) {   //las props vienen de item Detail
 
-    const [contador, setContador] = useState(initial);  //seteo un nuevo estado de contador, el valor initial viene del itemDetail en 0
+export function ItemCount({stock, onAdd}) {   //las props vienen de item Detail, la traigo desde stock de productos
+
+    const [contador, setContador] = useState(0);  // el valor inicial lo dejo en 0, no lo traigo mas por prop ya que la compra inicial comienza en cero
+  
 
     const sumarContador = () => {  //funcion agregar cantidad al producto
 
@@ -21,6 +24,8 @@ export function ItemCount({stock, initial, onAdd}) {   //las props vienen de ite
 
     };
 
+    
+
 
     return (
         <div className="container text-center">
@@ -32,11 +37,11 @@ export function ItemCount({stock, initial, onAdd}) {   //las props vienen de ite
                     <Button variant="dark" size="md" className="mx-1" active onClick={restarContador}>
                         -
                     </Button>
-                    <Button variant="dark" size="md" className="mx-1" active onClick={() => {
-                        return onAdd(contador);
-                    }}>
-                    comprar                    
-                    </Button>
+                    
+                    <Intercambiabilidad onClick={() => { return onAdd(contador);}}/> 
+            
+                                      
+                    
                 </div>
                 <p className=" my-3"> Cantidad: {contador}</p>
             </div>

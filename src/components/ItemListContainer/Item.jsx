@@ -20,7 +20,7 @@ export const Item = ({producto}) => {
                                 <Card.Text>
                                     {producto.descBreve}
                                 </Card.Text>
-                                <Button as={Link} to={`/details/ ${producto.id}`} variant="dark" size="md" className="mx-1" active>
+                                <Button as={Link} to={`/details/${producto.id}`} variant="dark" size="md" className="mx-1" active>
                                     Ver Mas
                                 </Button>
                         </Card.Body>
