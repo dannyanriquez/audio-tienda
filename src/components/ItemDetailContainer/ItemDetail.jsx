@@ -28,7 +28,7 @@ console.log(carrito)
                                 <Card.Header>{propproducto.nombre} - {propproducto.descBreve}</Card.Header>
                                 <Card.Body>
                                     <Carousel>
-                                        <Carousel.Item interval={4000}>
+                                        <Carousel.Item interval={4000}>  
                                             <img
                                             className="d-block w-100"
                                             src= {propproducto.imga}

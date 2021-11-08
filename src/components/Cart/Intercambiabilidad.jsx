@@ -14,7 +14,7 @@ export const ButtonAdd = () => {
         )    
     }
 
-export const ContinueCart = ({onAdd, contador}) => {
+export const ContinueCart = () => {
 
     return (
         <Button as={Link} to={`/Cart`} variant="dark" size="md" className="mx-1" active>
