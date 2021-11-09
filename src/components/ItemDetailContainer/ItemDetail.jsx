@@ -9,7 +9,7 @@ export const ItemDetail = ({propproducto}) => {
 
 const [carrito, setCarrito] = useState(0)
 
-const handleClick = (contador) => {
+const onAdd = (contador) => {
     setCarrito(contador)
 
 }
@@ -57,7 +57,7 @@ console.log(carrito) //estado del carrito
                                     </Card.Text>
                                     <Card.Title>Precio ${propproducto.precio}</Card.Title>
                                 </Card.Body>
-                                <ItemCount stock={propproducto.stock} onAdd={handleClick}/>
+                                <ItemCount stock={propproducto.stock} onAdd={onAdd}/>
                                 <Card.Footer className="text-muted">2 days ago</Card.Footer>
                             </Card>
                         </div>

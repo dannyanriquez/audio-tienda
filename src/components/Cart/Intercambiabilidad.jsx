@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom';
 
 
 
-export const ButtonAdd = () => {
+export const ButtonAdd = ({contador, onAdd}) => { //esta funcion ejecuta el seteo del nuevo carrito
 
     return (
-        <Button variant="dark" size="md" className="mx-1" active>
+        <Button variant="dark" size="md" className="mx-1" active
+        onClick={() => {
+            onAdd(contador)
+        }}>
             comprar                   
         </Button>
         )    
@@ -23,7 +26,7 @@ export const ContinueCart = () => {
         )
     }
 
-export const Intercambiabilidad = () => { 
+export const Intercambiabilidad = ({contador, onAdd}) => { 
         
 const [input, setInput] = useState(true)
 
@@ -39,10 +42,10 @@ const handleInter = () => {
 
         <div onClick={handleInter} className="my-3">
         {
-        input === true ? <ButtonAdd/> 
+        input === true ? <ButtonAdd contador={contador} onAdd={onAdd}/> //le sigo pasando las props a la funcion que ejecuta 
           
           
-        : <ContinueCart/>
+        : <ContinueCart />
         } 
         </div>
     )

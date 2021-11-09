@@ -7,7 +7,7 @@ import { Intercambiabilidad } from '../Cart/Intercambiabilidad';
 
 
 
-export function ItemCount({stock, onAdd}) {   //las props vienen de item Detail, la traigo desde stock de productos
+export function ItemCount({stock,onAdd}) {   //las props vienen de item Detail, la traigo desde stock de productos
 
     const [contador, setContador] = useState(0);  // el valor inicial lo dejo en 0, no lo traigo mas por prop ya que la compra inicial comienza en cero
   
@@ -38,7 +38,7 @@ export function ItemCount({stock, onAdd}) {   //las props vienen de item Detail,
                         -
                     </Button>
                     
-                    <Intercambiabilidad onClick={() => { return onAdd(contador);}}/> 
+                    <Intercambiabilidad contador={contador} onAdd={onAdd}/> 
                       
                 
                 </div>
