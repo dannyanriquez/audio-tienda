@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
-import { Intercambiabilidad } from '../ItemDetailContainer/ItemDetail';
+
 
 
 
@@ -21,6 +21,7 @@ export function ItemCount({stock,onAdd}) {   //las props vienen de item Detail, 
     };
 
     
+    
 
 
     return (
@@ -33,9 +34,12 @@ export function ItemCount({stock,onAdd}) {   //las props vienen de item Detail, 
                     <Button variant="dark" size="md" className="mx-1" active onClick={restarContador}>
                         -
                     </Button>
-                    
-                    { <Intercambiabilidad contador={contador} onAdd={onAdd}/>}
-                      
+                    <Button variant="dark" size="md" className="mx-1" active 
+                        onClick={() => { 
+                                onAdd(contador) //le paso el dato contador a la funcion inicial
+                                }}>
+                                comprar                   
+                    </Button>
                 
                 </div>
                 <p className=" my-3"> Cantidad: {contador}</p>
