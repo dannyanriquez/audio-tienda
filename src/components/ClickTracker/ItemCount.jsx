@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
-import { Intercambiabilidad } from '../Cart/Intercambiabilidad';
-
-
+import { Intercambiabilidad } from '../ItemDetailContainer/ItemDetail';
 
 
 
