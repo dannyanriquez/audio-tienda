@@ -30,11 +30,8 @@ export const Intercambiabilidad = ({contador, onAdd}) => {
         
 const [input, setInput] = useState(true)
 
-
 const handleInter = () => {
-
-    setInput(false)
-    
+    setInput(false)    
 }
 
 
@@ -44,11 +41,9 @@ const handleInter = () => {
         {
         input === true ? <ButtonAdd contador={contador} onAdd={onAdd}/> //le sigo pasando las props a la funcion que ejecuta 
           
-          
         : <ContinueCart />
         } 
         </div>
     )
 }
 
-// revisar 

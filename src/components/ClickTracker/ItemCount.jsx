@@ -20,8 +20,6 @@ export function ItemCount({stock,onAdd}) {   //las props vienen de item Detail, 
     const restarContador = () => {  //funcion restar cantidad
 
         contador > 1 ? setContador(contador-1) : alert (`No puedes seleccionar menos de 1 unidad`); //si el estado contador es mayor a 1 se resta, caso contrario alert
-        
-
     };
 
     
@@ -38,7 +36,7 @@ export function ItemCount({stock,onAdd}) {   //las props vienen de item Detail, 
                         -
                     </Button>
                     
-                    <Intercambiabilidad contador={contador} onAdd={onAdd}/> 
+                    { <Intercambiabilidad contador={contador} onAdd={onAdd}/>}
                       
                 
                 </div>

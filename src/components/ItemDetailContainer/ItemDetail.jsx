@@ -3,6 +3,31 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import { ItemCount } from '../ClickTracker/ItemCount'
 import { useState } from 'react'
+import { ButtonAdd, ContinueCart } from '../Cart/Intercambiabilidad'
+
+
+
+export const Intercambiabilidad = ({contador, onAdd}) => { 
+        
+    const [input, setInput] = useState(true)
+    
+    const handleInter = () => {
+        setInput(false)    
+    }
+    
+    
+        return (
+    
+            <div onClick={handleInter} className="my-3">
+            {
+            input === true ? <ButtonAdd contador={contador} onAdd={onAdd}/> //le sigo pasando las props a la funcion que ejecuta 
+              
+            : <ContinueCart />
+            } 
+            </div>
+        )
+    }
+
 
 
 export const ItemDetail = ({propproducto}) => {
@@ -11,9 +36,7 @@ const [carrito, setCarrito] = useState(0)
 
 const onAdd = (contador) => {
     setCarrito(contador)
-
 }
-
 
 console.log(carrito) //estado del carrito
           
