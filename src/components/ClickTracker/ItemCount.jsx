@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 
 
-
-
-
 export function ItemCount({stock,onAdd}) {   //las props vienen de item Detail, la traigo desde stock de productos
 
     const [contador, setContador] = useState(0);  // el valor inicial lo dejo en 0, no lo traigo mas por prop ya que la compra inicial comienza en cero

@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 
-export const CartContext = createContext () //contexto creado
+export const CartContext = createContext() //contexto creado
 
 export const CartContextProvider = ({children}) => {
 
@@ -20,7 +20,6 @@ export const CartContextProvider = ({children}) => {
     }
 
     return (
-        <div>
             <CartContext.Provider value={{  //hago un provider en return para no pasar las values en app
                 cartList,      //paso estados y funciones a consumir de forma global
                 ListView,
@@ -28,6 +27,5 @@ export const CartContextProvider = ({children}) => {
             }}>
             {children}       
             </CartContext.Provider>
-        </div>
     )
 }

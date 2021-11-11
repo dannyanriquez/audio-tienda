@@ -8,10 +8,13 @@ import { NavBar } from './components/NavBar/NavBar';
 import { CartContextProvider } from './context/CartContext'
 
 
+
+
 function App() {
   
   return (
     <div>  
+
     <CartContextProvider>
     <BrowserRouter>
     <NavBar/>

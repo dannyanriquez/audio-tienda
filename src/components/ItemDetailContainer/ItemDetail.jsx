@@ -1,15 +1,11 @@
-import { Carousel, Button} from 'react-bootstrap'
 import { useContext, useState  } from 'react'
+import { Carousel, Button} from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 import { ItemCount } from '../ClickTracker/ItemCount'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 
-
-
-
-const {} = useContext(CartContext)
 
 
 export const ContinueCart = () => {
@@ -27,8 +23,14 @@ export const ItemDetail = ({propproducto}) => {
 
 const [carrito, setCarrito] = useState(0)
 
+
+const {cartList,AddToCart} = useContext(CartContext)
+
+console.log(cartList)
+
 const onAdd = (contador) => {
     setCarrito(contador)
+    AddToCart({propproducto, cantidad: contador})
    
 }
 
