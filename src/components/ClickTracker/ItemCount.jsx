@@ -49,4 +49,3 @@ export function ItemCount({stock,onAdd}) {   //las props vienen de item Detail, 
 }
     
     
-    

@@ -1,11 +1,18 @@
 import { Carousel, Button} from 'react-bootstrap'
-import React from 'react'
+import { useContext, useState  } from 'react'
 import { Card } from 'react-bootstrap'
 import { ItemCount } from '../ClickTracker/ItemCount'
-import { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 
-export const ContinueCart = ({handleInter}) => {
+
+
+
+const {} = useContext(CartContext)
+
+
+export const ContinueCart = () => {
 
     return (
         <Button as={Link} to={`/Cart`} variant="dark" size="md" className="mx-1" active>
@@ -14,17 +21,17 @@ export const ContinueCart = ({handleInter}) => {
         )
     }
 
+
+
 export const ItemDetail = ({propproducto}) => {
 
 const [carrito, setCarrito] = useState(0)
 
 const onAdd = (contador) => {
     setCarrito(contador)
+   
 }
 
-
-
-console.log(carrito) //estado del carrito
 
     return (
         <>
