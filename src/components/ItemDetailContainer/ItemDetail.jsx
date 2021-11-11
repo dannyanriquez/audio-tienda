@@ -24,9 +24,9 @@ export const ItemDetail = ({propproducto}) => {
 const [carrito, setCarrito] = useState(0)
 
 
-const {cartList,AddToCart} = useContext(CartContext)
+const {AddToCart} = useContext(CartContext)
 
-console.log(cartList)
+
 
 const onAdd = (contador) => {
     setCarrito(contador)
