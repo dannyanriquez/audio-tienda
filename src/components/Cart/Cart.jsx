@@ -39,25 +39,7 @@ export const Cart = () => {
                     
                     )}
             </tbody>
-            <thead>
-            { cartList.map(prod =>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th>TOTAL</th>
-                        <th>Total</th>
-                        
-                    </tr>
-                    )}
-            </thead>
-    
-
-        
             </Table>
-        
-    
-        
         </>
     )
     
