@@ -10,8 +10,10 @@ export const CartContextProvider = ({children}) => {
     function AddToCart(items) {
         setCartList([
               ...cartList, //con spread me suma lo que ya tiene cartlist al nuevo array
-                    items  //se dispara la funcion y setea el carrito con lo recopilado
-        ])
+                    items,  //se dispara la funcion que viene desde ItemDetail y setea el carrito con lo recopilado en la prop item
+        
+        
+                ])
     }
 
 

@@ -1,21 +1,9 @@
 import { useContext, useState  } from 'react'
-import { Carousel, Button} from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
-import { ItemCount } from '../ClickTracker/ItemCount'
+import { ItemCount, ContinueCart } from '../ClickTracker/ItemCount'
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
-
-
-
-export const ContinueCart = () => {
-
-    return (
-        <Button as={Link} to={`/Cart`} variant="dark" size="md" className="mx-1" active>
-            Terminar Compra
-        </Button>
-        )
-    }
 
 
 
@@ -27,10 +15,15 @@ const [carrito, setCarrito] = useState(0)
 const {AddToCart} = useContext(CartContext)
 
 
-
 const onAdd = (contador) => {
     setCarrito(contador)
-    AddToCart({propproducto, cantidad: contador})
+    AddToCart({propproducto,   //devuelvo un objeto con las caracteristicas que quiero mostrar en el carrito principal
+        cantidad: contador, 
+        nombre:propproducto.nombre,
+        precio:propproducto.precio,
+        categoria: propproducto.categoria,
+        imagen: propproducto.imga
+    }) //ejecuto la funcion que viene desde CartContext para agregar un objeto y la cantidad depende de la prop contador de ItemCount
    
 }
 
