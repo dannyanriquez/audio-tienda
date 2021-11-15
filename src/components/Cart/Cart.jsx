@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { Table, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 
 
 
 export const Cart = () => { 
 
-    const {totalCart, cartList} = useContext(CartContext)
+    const {totalCart, cartList, clear, removeItem} = useContext(CartContext)
     console.log(totalCart)
 
     return (
@@ -30,7 +31,7 @@ export const Cart = () => {
                         <td>{prod.propproducto.nombre}</td>
                         <td>{prod.cantidad}</td>
                         <td>${prod.propproducto.precio * prod.cantidad}</td> 
-                        <td><button className="btn btn-danger">X</button></td>
+                        <td><button className="btn btn-danger" onClick={() => removeItem(prod.propproducto.id)}>X</button></td>
                     </tr>
                     
                     )}
@@ -41,6 +42,7 @@ export const Cart = () => {
                     <tr>
                        
                         <th></th>
+                        <th></th>
                         <th>Total</th>
                         
                     </tr>
@@ -49,11 +51,13 @@ export const Cart = () => {
            
                     <tr >
                         
-                        <td><button className="btn btn-danger">Limpiar carrito</button></td> 
-                        <td>${totalCart}</td>
+                        <td><button className="btn btn-danger" onClick={() =>clear()}>Limpiar carrito</button></td>
+                        <td> 
+                            <a href="https://www.mercadopago.com.ar/">
+                            <button className="btn btn-success">
+                                Finalizar compra</button></a> </td>
+                            <td>${totalCart}</td>
                     </tr>
-                    
-                
             </tbody>
             </Table>
         </>

@@ -28,9 +28,15 @@ export const CartContextProvider = ({children}) => {
         }
     }
 
+
+    const removeItem = IdItemRemove => {
+        setCartList(cartList.filter(data => data.propproducto.id !== IdItemRemove))
+        setTotalCart(cartList.filter(data => data.propproducto.id !== IdItemRemove))
+    }
    
     const clear = () => {
         setCartList([])
+        setTotalCart(0)
     }
 
     
@@ -40,7 +46,8 @@ export const CartContextProvider = ({children}) => {
                 cartList,
                 totalCart,      //paso primero los estados y luego funciones a consumir de forma global
                 AddToCart,
-                
+                clear,
+                removeItem
 
             }}>
             {children}       
