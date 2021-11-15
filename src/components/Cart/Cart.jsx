@@ -31,7 +31,7 @@ export const Cart = () => {
                         <td>{prod.propproducto.nombre}</td>
                         <td>{prod.cantidad}</td>
                         <td>${prod.propproducto.precio * prod.cantidad}</td> 
-                        <td><button className="btn btn-danger" onClick={() => removeItem(prod.propproducto.id)}>X</button></td>
+                        <td><button className="btn btn-danger" onClick={() => removeItem(prod)}>X</button></td>
                     </tr>
                     
                     )}
@@ -53,7 +53,7 @@ export const Cart = () => {
                         
                         <td><button className="btn btn-danger" onClick={() =>clear()}>Limpiar carrito</button></td>
                         <td> 
-                            <a href="https://www.mercadopago.com.ar/">
+                            <a href="https://www.mercadopago.com.ar/withdraw#from-section=home" target="_blank">
                             <button className="btn btn-success">
                                 Finalizar compra</button></a> </td>
                             <td>${totalCart}</td>

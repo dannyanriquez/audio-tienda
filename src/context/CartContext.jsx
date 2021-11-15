@@ -7,15 +7,15 @@ export const CartContext = createContext() //contexto creado
 export const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([])  //nuevo estado global, array de carrito 
-    const [totalCart, setTotalCart] = useState(0)
+    const [totalCart, setTotalCart] = useState(0) //estado global para la suma de los precios
     
    
 
     function AddToCart(items) { //funcion para agregar productos al carrito global con prop recibida de Itemcount donde recibo las cantidades y el array del producto seleccionado
 
-        setTotalCart(totalCart + (items.propproducto.precio * items.cantidad))
+        setTotalCart(totalCart + (items.propproducto.precio * items.cantidad)) //multiplico los precios por la cantidad traida del items
 
-        const isInCart = cartList.find(res => res.propproducto.id === items.propproducto.id)
+        const isInCart = cartList.find(res => res.propproducto.id === items.propproducto.id)  //pregunto si existe el producto en el cartList
        
         if(isInCart){
             isInCart.cantidad = isInCart.cantidad + items.cantidad
@@ -29,12 +29,12 @@ export const CartContextProvider = ({children}) => {
     }
 
 
-    const removeItem = IdItemRemove => {
-        setCartList(cartList.filter(data => data.propproducto.id !== IdItemRemove))
-        setTotalCart(cartList.filter(data => data.propproducto.id !== IdItemRemove))
+    const removeItem = (IdItemRemove) => {
+        setCartList(cartList.filter(data => data.propproducto.id !== IdItemRemove.propproducto.id ))
+        setTotalCart(totalCart - (IdItemRemove.propproducto.precio * IdItemRemove.cantidad))
     }
    
-    const clear = () => {
+    const clear = () => {  //seteo los nuevos estados a inicial
         setCartList([])
         setTotalCart(0)
     }
