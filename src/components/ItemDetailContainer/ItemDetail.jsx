@@ -11,22 +11,16 @@ export const ItemDetail = ({propproducto}) => {
 
 const [carrito, setCarrito] = useState(0)
 
-
-const {AddToCart} = useContext(CartContext)
-
+const {AddToCart} = useContext(CartContext) //uso el contexto Cartcontext y traigo la funcion AddToCart
 
 const onAdd = (contador) => {
     setCarrito(contador)
-    AddToCart({propproducto,   //devuelvo un objeto con las caracteristicas que quiero mostrar en el carrito principal
-        cantidad: contador, 
-        nombre:propproducto.nombre,
-        precio:propproducto.precio,
-        categoria: propproducto.categoria,
-        imagen: propproducto.imga
-    }) //ejecuto la funcion que viene desde CartContext para agregar un objeto y la cantidad depende de la prop contador de ItemCount
+    AddToCart({   // disparo la funcion y devuelvo un objeto con las caracteristicas que quiero mostrar en el carrito principal
+        propproducto, 
+        cantidad: contador
+    }) //devuelve un objeto con las nuevas claves y sus valores los capturo de la prop propproducto. La cantidad depende de la prop contador de ItemCount
    
 }
-
 
     return (
         <>
@@ -70,7 +64,7 @@ const onAdd = (contador) => {
                                     {
                                     carrito === 0 ? <ItemCount stock={propproducto.stock} onAdd={onAdd}/> //si carrito es igual a 0, muestra itemcount, cualquier valor superior cierra la compra 
                                     :
-                                    <ContinueCart/>
+                                    <ContinueCart stock={propproducto.stock} onAdd={onAdd}/>
                                     }
                                     </div>
 

@@ -29,7 +29,7 @@ export function ItemCount({stock,onAdd}) {   //las props vienen de item Detail, 
                     </Button>
                     <Button variant="dark" size="md" className="mx-1" active 
                         onClick={() => { 
-                                onAdd(contador) //ejecuto y le paso el dato contador a la funcion inicial OnAdd ubicada en ItemCount
+                                onAdd(contador) //ejecuto la fn y le paso el dato contador a la funcion inicial OnAdd ubicada en ItemCount
                                 }}>
                                 comprar                   
                     </Button>
