@@ -1,10 +1,10 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect, memo } from 'react'
 import { Item } from './Item'
 import { getProductos } from '../../services/getProducts'
 import Spinner from 'react-bootstrap/Spinner'
 import { useParams } from 'react-router-dom'
 
-export const ItemList = () => {
+export const ItemList = memo (() => {  //envolviendo con memo el componente logro que si hago cambios en el compomponente padre rl listado de productos no vuelvan a renderizar
     
     const [loading, setLoading] = useState(true)  //se muestra un loading inicial en true
     const [products, setProducts] = useState([]) //creo un nuevo estado para guardar el resolve dentro de un array vacio
@@ -62,7 +62,7 @@ export const ItemList = () => {
         </>
         
     )
-}
+})
 
 
 

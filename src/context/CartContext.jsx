@@ -8,13 +8,13 @@ export const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([])  //nuevo estado global, array de carrito 
     const [totalCart, setTotalCart] = useState(0) //estado global para la suma de los precios
-    
+    const [cantParcial, setCantParcial] = useState(0) // estado para contabilizar la cantidad de unidades seleccionadas y mostrarlas en el carrito
    
 
     function AddToCart(items) { //funcion para agregar productos al carrito global con prop recibida de Itemcount donde recibo las cantidades y el array del producto seleccionado
 
         setTotalCart(totalCart + (items.propproducto.precio * items.cantidad)) //multiplico los precios por la cantidad traida del items
-
+        setCantParcial(cantParcial + items.cantidad) // seteo las cantidad de unidades seleccionadas
         const isInCart = cartList.find(res => res.propproducto.id === items.propproducto.id)  //pregunto si existe el producto en el cartList
        
         if(isInCart){
@@ -32,11 +32,13 @@ export const CartContextProvider = ({children}) => {
     const removeItem = (IdItemRemove) => {
         setCartList(cartList.filter(data => data.propproducto.id !== IdItemRemove.propproducto.id ))
         setTotalCart(totalCart - (IdItemRemove.propproducto.precio * IdItemRemove.cantidad))
+        setCantParcial(cantParcial - IdItemRemove.cantidad)
     }
    
     const clear = () => {  //seteo los nuevos estados a inicial
         setCartList([])
         setTotalCart(0)
+        setCantParcial(0)
     }
 
     
@@ -44,6 +46,7 @@ export const CartContextProvider = ({children}) => {
     return (
             <CartContext.Provider value={{  //hago un provider en return para no pasar las values en app
                 cartList,
+                cantParcial,
                 totalCart,      //paso primero los estados y luego funciones a consumir de forma global
                 AddToCart,
                 clear,

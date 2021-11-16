@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Table, Card } from 'react-bootstrap'
+import { Table, Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 
@@ -8,9 +8,21 @@ import { CartContext } from '../../context/CartContext'
 export const Cart = () => { 
 
     const {totalCart, cartList, clear, removeItem} = useContext(CartContext)
-    console.log(totalCart)
+    console.log(cartList)
 
     return (
+        
+        totalCart === 0 
+        ? 
+        
+        <div className="containter text-center my-5">
+            <h1 >CARRITO VACIO</h1>
+            <h3>No hay productos seleccionados</h3>
+            <Button as={Link} to="/" variant="dark" size="md" className="mx-1" active className="my-3">
+            Empeza a comprar
+            </Button>
+        </div>
+        :
         <>
             <Table striped bordered hover variant="dark my-5 container text-center">  
             <thead>
@@ -43,6 +55,7 @@ export const Cart = () => {
                        
                         <th></th>
                         <th></th>
+                        <th></th>
                         <th>Total</th>
                         
                     </tr>
@@ -51,11 +64,17 @@ export const Cart = () => {
            
                     <tr >
                         
-                        <td><button className="btn btn-danger" onClick={() =>clear()}>Limpiar carrito</button></td>
+                        <td>
+                            <Button className="btn btn-danger" onClick={() =>clear()}>Limpiar carrito</Button>
+                        </td>
+                        <td>
+                            <Button as={Link} to="/" variant="dark" size="md" className="mx-1" active>
+                             Seguir comprando
+                            </Button>
+                        </td>
                         <td> 
-                            <a href="https://www.mercadopago.com.ar/withdraw#from-section=home" target="_blank">
-                            <button className="btn btn-success">
-                                Finalizar compra</button></a> </td>
+                            <a href="https://www.mercadopago.com.ar/withdraw#from-section=home" target="_blank"><button className="btn btn-success">Finalizar compra</button></a>    
+                        </td>
                             <td>${totalCart}</td>
                     </tr>
             </tbody>

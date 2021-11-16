@@ -48,9 +48,11 @@ export const ContinueCart = () => { //boton para terminar compra con link hacia 
         <>
         <Button as={Link} to={`/Cart`} variant="dark" size="md" className="mx-1" active>
             Terminar Compra
-        </Button><Button as={Link} to="/" variant="dark" size="md" className="mx-1" active>
+        </Button>
+        <Button as={Link} to="/" variant="dark" size="md" className="mx-1" active>
                 Seguir comprando
-            </Button></>
+        </Button>
+        </>
 
         )
     }
