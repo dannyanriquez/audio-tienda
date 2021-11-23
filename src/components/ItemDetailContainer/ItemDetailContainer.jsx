@@ -3,6 +3,7 @@ import { ItemDetail } from './ItemDetail'
 import { getProductos } from '../../services/getProducts'
 import Spinner from 'react-bootstrap/Spinner'
 import { useParams } from 'react-router-dom'
+import { getFirestore } from '../../services/getFirestore'
 
 
 export const ItemDetailContainer = () => {
@@ -12,9 +13,17 @@ export const ItemDetailContainer = () => {
     const [detalleProducto, setDetalleProducto] = useState({}) //estado inicial objeto vacio
     const [loadingTwo, setLoadingTwo] = useState(true)  //se muestra un loading inicial en true
 
+ 
+
     useEffect(() => {
-        getProductos
-        .then(res => setDetalleProducto(res.find(prod => prod.id === parseInt(idItem)))) //capturo el resultado positivo y lo seteo en el estado setProducts con un filtro por id. Devuelve array pasado anumero
+
+        const db = getFirestore() //llamo a la funcion de Firestore
+        const dbQuery = db.collection("productos").doc(idItem).get()   
+
+        dbQuery
+        .then(resp => setDetalleProducto( { id: resp.id, ...resp.data() }))
+
+        
         .catch(err => console.log(err)) //capturamos todos los errores posibles que vienen desde la promesa, en este caso de productos
         .finally() 
 
@@ -22,6 +31,12 @@ export const ItemDetailContainer = () => {
         setTimeout(() => {
             setLoadingTwo(false)
         }, 2000);
+
+
+
+        // getProductos (con un mock)
+        // .then(res => setDetalleProducto(res.find(prod => prod.id === parseInt(id)))) //capturo el resultado positivo y lo seteo en el estado setProducts con un filtro por id. Devuelve array pasado anumero
+        
 
     }, [idItem])
     

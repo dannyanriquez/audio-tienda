@@ -22,7 +22,7 @@ export const NavBar = () => {
                    
                     <Nav className="me-center">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>   
-                            <Nav.Link as={Link} to="/categoria/audio">Audio</Nav.Link>
+                            <Nav.Link as={Link} to="/categoria/audio">Audio Pro</Nav.Link>
                             <Nav.Link as={Link} to="/categoria/homestudio">Home Studio</Nav.Link>
                             { cantParcial === 0 ? <h1></h1> :
                                 <Nav.Link as={Link} to="/Cart"><BsCart4/> {cantParcial} </Nav.Link>

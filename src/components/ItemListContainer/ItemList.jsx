@@ -3,6 +3,7 @@ import { Item } from './Item'
 import { getProductos } from '../../services/getProducts'
 import Spinner from 'react-bootstrap/Spinner'
 import { useParams } from 'react-router-dom'
+import { getFirestore } from '../../services/getFirestore'
 
 export const ItemList = memo (() => {  //envolviendo con memo el componente logro que si hago cambios en el compomponente padre rl listado de productos no vuelvan a renderizar
     
@@ -14,26 +15,43 @@ export const ItemList = memo (() => {  //envolviendo con memo el componente logr
     
     
     useEffect(() => {   
-        
-    getProductos
-        .then(res => { 
-            if(idCategoria){ //si getproductos recibe un parametro desde id categoria hace el filtro
-                setProducts(res.filter(prod => prod.categoria === idCategoria)) //capturo el resultado positivo y lo seteo en el estado setProducts con un filtro por categoria. Devuelve array
-            
-            
-            } else {
-                setProducts(res) //capturo el resultado positivo y lo seteo en el estado setProducts
-            }
-        })
-        
 
-        .catch(err => console.log(err)) //capturamos todos los errores posibles que vienen desde la promesa, en este caso de productos
-        .finally() //cuando termina el ciclo setea el loading a falso y muestra el map   
+    const db = getFirestore() //llamo a la funcion de Firestore
+    const dbQuery = db.collection("productos").where("categoria", "==", "audiopro").get()  //llamo a la coleccion de la database de Firestore, con get trae todo lo de la coleccion
+
+    dbQuery
+    .then(resp => setProducts(resp.docs.map(prod => ( { id: prod.id, ...prod.data()} ))))  //Seteo todos los productos que vienen de Firestore iterando en un array
+            
+            
+            
+       
+   
+     
+    
+    
+    
+    .catch(err => console.log(err)) //capturamos todos los errores posibles que vienen desde la promesa, en este caso de productos
+    
+    .finally() //cuando termina el ciclo setea el loading a falso y muestra el map   
 
 
             setTimeout(() => {
                 setLoading(false)
             }, 3000);
+
+
+
+    // getProductos
+    //     .then(res => { 
+    //         if(idCategoria){ //si getproductos recibe un parametro desde id categoria hace el filtro
+    //             setProducts(res.filter(prod => prod.categoria === idCategoria)) //capturo el resultado positivo y lo seteo en el estado setProducts con un filtro por categoria. Devuelve array
+            
+            
+    //         } else {
+    //             setProducts(res) //capturo el resultado positivo y lo seteo en el estado setProducts
+    //         }
+    //     })
+        
         
     },[idCategoria])
 
@@ -53,7 +71,9 @@ export const ItemList = memo (() => {  //envolviendo con memo el componente logr
                                 
                         :  //ternario: si loading es verdadero muestra el h1, cuando termina de cargar pasa el mapeo
                     
-                    products.map((prod) => <Item key={prod.id} producto={prod}/>)           
+                    products.map((prod) => {
+                        return <Item key={prod.id} producto={prod} />
+                    })           
                         
                 }
                 </div>
