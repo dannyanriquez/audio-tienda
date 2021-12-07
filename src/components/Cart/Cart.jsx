@@ -1,14 +1,48 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Table, Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
+import firebase from "firebase"
+import 'firebase/firestore'
 
-
+import {getFirestore} from "../../services/getFirestore"
 
 export const Cart = () => { 
 
+    const [formData, setFormData] = useState({
+        name : 'comprador',
+        phone: '12344567',
+        email: 'prueba@gmail.com',
+        emailConfirm: 'prueba@gmail.com'
+    })
+
     const {totalCart, cartList, clear, removeItem} = useContext(CartContext)
-    console.log(cartList)
+    
+    
+
+    const generarOrden = (e) => {
+        e.preventeDefault()
+
+        let orden = {}
+        orden.date = firebase.firestore.Timestamp.fromDate(new Date());
+        orden.buyer = formData;
+        orden.total = totalCart; 
+        orden.items = cartList.map(prod => {
+            const id = prod.propproducto.id;
+            const nombre = prod.propproducto.nombre
+            const precio = prod.propproducto.precio * prod.cantidad
+        
+        return {id, nombre, precio}
+        })
+
+
+        const dbQuery = getFirestore()
+        dbQuery.collection('orders').add(orden)
+        .then(resp => console.log(resp))
+    }
+
+    
+
 
     return (
         
@@ -73,7 +107,7 @@ export const Cart = () => {
                             </Button>
                         </td>
                         <td> 
-                            <a href="https://www.mercadopago.com.ar/withdraw#from-section=home" target="_blank"><button className="btn btn-success">Finalizar compra</button></a>    
+                            <button className="btn btn-success" onclick={() => generarOrden()}>Finalizar compra</button>    
                         </td>
                             <td>${totalCart}</td>
                     </tr>
