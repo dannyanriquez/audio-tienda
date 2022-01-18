@@ -62,7 +62,7 @@ export const Cart = () => {
             <thead>
                     <tr>
                         <th>Imagen</th>
-                        <th>Categoria</th>
+                        <th>Marca</th>
                         <th>Producto</th>
                         <th>Cantidad</th>
                         <th>Total</th>
@@ -73,7 +73,7 @@ export const Cart = () => {
             { cartList.map(prod => //Mapeo el nuevo array cartlist tomando los datos de la prop original propproducto
                     <tr key={prod.propproducto.id}>
                         <td>< Card.Img style={{width:'5em'}} src={prod.propproducto.imga} rounded /></td>
-                        <td>{prod.propproducto.categoria}</td>
+                        <td>{prod.propproducto.brand}</td>
                         <td>{prod.propproducto.nombre}</td>
                         <td>{prod.cantidad}</td>
                         <td>${prod.propproducto.precio * prod.cantidad}</td> 

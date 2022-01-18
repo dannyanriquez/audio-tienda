@@ -1,9 +1,11 @@
 import { useContext, useState  } from 'react'
 import { Carousel } from 'react-bootstrap'
-import { Card } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { ItemCount, ContinueCart } from '../ClickTracker/ItemCount'
 import React from 'react'
 import { CartContext } from '../../context/CartContext'
+
 
 
 
@@ -33,7 +35,7 @@ const onAdd = (contador) => {
                                 <Card.Header>{propproducto.nombre} - {propproducto.descBreve}</Card.Header>
                                 <Card.Body>
                                     <Carousel>
-                                        <Carousel.Item interval={4000}>
+                                        <Carousel.Item interval={2000}>
                                             <img
                                                 className="d-block w-100"
                                                 src={propproducto.imga}
@@ -41,13 +43,13 @@ const onAdd = (contador) => {
                                             <Carousel.Caption>
                                             </Carousel.Caption>
                                         </Carousel.Item>
-                                        <Carousel.Item interval={4000}>
+                                        <Carousel.Item interval={2000}>
                                             <img
                                                 className="d-block w-100"
                                                 src={propproducto.imgb}
                                                 alt="Second slide" />
                                         </Carousel.Item>
-                                        <Carousel.Item interval={4000}>
+                                        <Carousel.Item interval={2000}>
                                             <img
                                                 className="d-block w-100"
                                                 src={propproducto.imgc}
@@ -69,9 +71,12 @@ const onAdd = (contador) => {
                                     </div>
 
 
-                                <Card.Footer className="text-muted">2 days ago</Card.Footer>
+                                <Card.Footer><Button as={Link} to="/" variant="dark" size="md" className="mx-1" active>
+                             inicio
+                            </Button></Card.Footer>
                             </Card>
                         </div>
+                        <div></div>
                     </>}
 
                 </div>

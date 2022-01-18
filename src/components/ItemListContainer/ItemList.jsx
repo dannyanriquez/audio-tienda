@@ -16,7 +16,8 @@ export const ItemList = memo (() => {  //envolviendo con memo el componente logr
     useEffect(() => {   
 
     const db = getFirestore() //llamo a la funcion de Firestore
-    const dbQuery = db.collection("productos").where("categoria", "==", "audiopro").get()  //llamo a la coleccion de la database de Firestore, con get trae todo lo de la coleccion
+    const dbQuery = db.collection("productos").get()  // con get traigo la coleccion completa
+    // const dbQuery = db.collection("productos").where("categoria", "==", "audiopro").get()  //llamo a la coleccion de la database de Firestore, con where filtro por categoria
 
     dbQuery
     .then(resp => setProducts(resp.docs.map(prod => ( { id: prod.id, ...prod.data()} ))))  //Seteo todos los productos que vienen de Firestore iterando en un array
