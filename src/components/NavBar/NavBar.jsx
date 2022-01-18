@@ -14,6 +14,7 @@ export const NavBar = () => {
     const {cantParcial} = useContext(CartContext)
 
     return (
+
         <div>
         
             <Navbar bg="dark" variant="dark">
@@ -27,7 +28,7 @@ export const NavBar = () => {
                             { cantParcial === 0 ? <h1></h1> :
                                 <Nav.Link as={Link} to="/Cart"><BsCart4/> {cantParcial} </Nav.Link>
                             }
-                            
+            
                     </Nav>
                       
                 </Container>

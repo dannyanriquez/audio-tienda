@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { ItemDetail } from './ItemDetail'
-import { getProductos } from '../../services/getProducts'
 import Spinner from 'react-bootstrap/Spinner'
 import { useParams } from 'react-router-dom'
 import { getFirestore } from '../../services/getFirestore'
@@ -18,7 +17,7 @@ export const ItemDetailContainer = () => {
     useEffect(() => {
 
         const db = getFirestore() //llamo a la funcion de Firestore
-        const dbQuery = db.collection("productos").doc(idItem).get()   
+        const dbQuery = db.collection("productos").doc(idItem).get()   //me muestra el producto IdItem seleccionado, traido desde la coleccion entera
 
         dbQuery
         .then(resp => setDetalleProducto( { id: resp.id, ...resp.data() }))
@@ -30,7 +29,7 @@ export const ItemDetailContainer = () => {
         
         setTimeout(() => {
             setLoadingTwo(false)
-        }, 2000);
+        }, 1500);
 
 
 

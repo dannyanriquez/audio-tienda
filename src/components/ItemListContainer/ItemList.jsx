@@ -1,6 +1,5 @@
 import React, { useState,useEffect, memo } from 'react'
 import { Item } from './Item'
-import { getProductos } from '../../services/getProducts'
 import Spinner from 'react-bootstrap/Spinner'
 import { useParams } from 'react-router-dom'
 import { getFirestore } from '../../services/getFirestore'
@@ -22,13 +21,6 @@ export const ItemList = memo (() => {  //envolviendo con memo el componente logr
     dbQuery
     .then(resp => setProducts(resp.docs.map(prod => ( { id: prod.id, ...prod.data()} ))))  //Seteo todos los productos que vienen de Firestore iterando en un array
             
-            
-            
-       
-   
-     
-    
-    
     
     .catch(err => console.log(err)) //capturamos todos los errores posibles que vienen desde la promesa, en este caso de productos
     
@@ -37,7 +29,7 @@ export const ItemList = memo (() => {  //envolviendo con memo el componente logr
 
             setTimeout(() => {
                 setLoading(false)
-            }, 3000);
+            }, 1500);
 
 
 
