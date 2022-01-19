@@ -20,7 +20,7 @@ export const ItemDetailContainer = () => {
         const dbQuery = db.collection("productos").doc(idItem).get()   //me muestra el producto IdItem seleccionado, traido desde la coleccion entera
 
         dbQuery
-        .then(resp => setDetalleProducto( { id: resp.id, ...resp.data() }))
+        .then(resp => setDetalleProducto( { id: resp.id, ...resp.data() })) //el .data me permite traer que viene encapsulado dentro del objeto, con el spread me hace una expansion de cada uno de los datos 
 
         
         .catch(err => console.log(err)) //capturamos todos los errores posibles que vienen desde la promesa, en este caso de productos

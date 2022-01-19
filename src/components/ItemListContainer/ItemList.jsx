@@ -18,9 +18,11 @@ export const ItemList = memo (() => {  //envolviendo con memo el componente logr
     const db = getFirestore() //llamo a la funcion de Firestore
     const dbQuery = db.collection("productos").get()  // con get traigo la coleccion completa
     // const dbQuery = db.collection("productos").where("categoria", "==", "audiopro").get()  //llamo a la coleccion de la database de Firestore, con where filtro por categoria
+    // const dbQuery = db.collection("productos").doc("1Xn0VO5dkO04W5KjiVF4").get()  //llamo a la coleccion de la database de Firestore, con doc filtro por algun ID 
+    
 
     dbQuery
-    .then(resp => setProducts(resp.docs.map(prod => ( { id: prod.id, ...prod.data()} ))))  //Seteo todos los productos que vienen de Firestore iterando en un array
+    .then(resp => setProducts(resp.docs.map(prod => ( { id: prod.id, ...prod.data()} ))))  //Seteo todos los productos que vienen de Firestore iterando en un array. (los datos vienen dentro de doc)
             
     
     .catch(err => console.log(err)) //capturamos todos los errores posibles que vienen desde la promesa, en este caso de productos
