@@ -9,30 +9,30 @@ import {getFirestore} from "../../services/getFirestore"
 
 export const Cart = () => { 
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({  //hardcodeo un estado tipo formulario con los datos del coprador 
         name : 'comprador',
         phone: '12344567',
         email: 'prueba@gmail.com',
-        emailConfirm: 'prueba@gmail.com'
     })
 
-    const {totalCart, cartList, clear, removeItem} = useContext(CartContext)
+    const {totalCart, cartList, clear, removeItem} = useContext(CartContext)  //traigo los context a utilizar en el carrito
     
     
 
-    const generarOrden = (e) => {
-        e.preventeDefault()
+    const generarOrden = (e) => {    //creo la funcion para generar la orden de compra, tomando los datos de los context como los productos, el total, etc.
+       
 
         let orden = {}
         orden.date = firebase.firestore.Timestamp.fromDate(new Date());
-        orden.buyer = formData;
-        orden.total = totalCart; 
+        orden.buyer = {name: "Daniel", phone: "12245723423", email: "prueba@gmail.com"};
+        orden.totalPedido = totalCart; 
         orden.items = cartList.map(prod => {
             const id = prod.propproducto.id;
             const nombre = prod.propproducto.nombre
-            const precio = prod.propproducto.precio * prod.cantidad
+            const subTotal = prod.propproducto.precio * prod.cantidad
+            const cantidad = prod.cantidad
         
-        return {id, nombre, precio}
+        return {id, nombre, cantidad, subTotal}
         })
 
 
@@ -52,7 +52,7 @@ export const Cart = () => {
         <div className="containter text-center my-5">
             <h1 >CARRITO VACIO</h1>
             <h3>No hay productos seleccionados</h3>
-            <Button as={Link} to="/" variant="dark" size="md" className="mx-1" active className="my-3">
+            <Button as={Link} to="/" variant="dark" size="md" className="mx-1 my-3" active>
             Empeza a comprar
             </Button>
         </div>
@@ -72,7 +72,7 @@ export const Cart = () => {
             <tbody>
             { cartList.map(prod => //Mapeo el nuevo array cartlist tomando los datos de la prop original propproducto
                     <tr key={prod.propproducto.id}>
-                        <td>< Card.Img style={{width:'5em'}} src={prod.propproducto.imga} rounded /></td>
+                        <td>< Card.Img style={{width:'5em'}} src={prod.propproducto.imga}/></td>
                         <td>{prod.propproducto.brand}</td>
                         <td>{prod.propproducto.nombre}</td>
                         <td>{prod.cantidad}</td>
@@ -107,12 +107,15 @@ export const Cart = () => {
                             </Button>
                         </td>
                         <td> 
-                            <button className="btn btn-success" onclick={() => generarOrden()}>Finalizar compra</button>    
+                            <button className="btn btn-success" onClick={() => generarOrden()}>Finalizar compra</button>    
                         </td>
                             <td>${totalCart}</td>
                     </tr>
             </tbody>
             </Table>
+
+            
+
         </>
     )
     
